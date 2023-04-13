@@ -24,11 +24,16 @@ module CycloneLariat
     end
 
     def publish
+      logger = Logger.new(STDOUT)
       sent_message_uids = messages.each_with_object([]) do |message, sent_message_uuids|
         begin
-          sns_client.publish message, fifo: message.fifo?
+          logger << "publishing message: #{message.uuid}"
+          res = sns_client.publish message, fifo: message.fifo?
+          logger << "message has been published: #{res.inspect}"
+
           sent_message_uuids << message.uuid
         rescue StandardError => e
+          logger << "publishing error #{e.message} - #{message.uuid}"
           repo.update_error(message.uuid, e.message)
           config.on_sending_error&.call(message, e)
           next
