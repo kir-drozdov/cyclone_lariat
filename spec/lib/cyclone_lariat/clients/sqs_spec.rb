@@ -302,7 +302,7 @@ RSpec.describe CycloneLariat::Clients::Sqs do
       end
 
       context 'when message invalid' do
-        let(:event) { client.event('create_user', data: { text: 'Test note' }, request_id: 'no-uuid', group_id: 'the.group') }
+        let(:event) { client.event('create_user', data: { text: 'Test note' }, uuid: 'no-uuid', group_id: 'the.group') }
 
         it 'should have invalid message' do
           expect(event.valid?).to eq false

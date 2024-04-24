@@ -215,15 +215,15 @@ module CycloneLariat
         end
       end
 
-      context 'when it defined in int UUID format' do
+      context 'when is not in UUID format' do
         before { params[:request_id] = 'string' }
 
         it 'should be eq defined string' do
-          is_expected.to eq('string')
+          is_expected.to eq 'string'
         end
 
         it 'should be invalid' do
-          expect(message.valid?).to eq false
+          expect(message.valid?).to be true
         end
       end
     end
