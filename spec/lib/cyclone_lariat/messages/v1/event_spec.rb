@@ -12,7 +12,7 @@ module CycloneLariat # rubocop:disable Metrics/ModuleLength
         type: 'create_user',
         version: 1,
         data: { email: 'john.doe@example.com' },
-        sent_at: '1970-01-01 16:40:00'
+        sent_at: '1970-01-01 16:40:00 +01:00'
       }
     end
 

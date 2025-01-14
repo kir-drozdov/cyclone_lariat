@@ -12,7 +12,7 @@ module CycloneLariat # rubocop:disable Metrics/ModuleLength
         type: 'user_email_updated',
         version: 2,
         data: { email: 'john.doe@example.com' },
-        sent_at: '1970-01-01 16:40:00',
+        sent_at: '1970-01-01 16:40:00 +01:00',
         subject: {
           type: 'User',
           uuid: user_uuid
