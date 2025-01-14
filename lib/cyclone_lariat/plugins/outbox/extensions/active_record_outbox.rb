@@ -6,7 +6,7 @@ module CycloneLariat
       module ActiveRecordOutbox
         def transaction(opts = {}, &block)
           opts = opts.dup
-          return super() unless opts.delete(:with_outbox)
+          return super(**opts, &block) unless opts.delete(:with_outbox)
 
           outbox = CycloneLariat::Outbox.new
           result = super(**opts) do
