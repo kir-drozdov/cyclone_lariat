@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cyclone_lariat (1.0.0)
+    cyclone_lariat (2.0.0)
       aws-sdk-sns
       aws-sdk-sqs
       base64 (~> 0.1.0)
