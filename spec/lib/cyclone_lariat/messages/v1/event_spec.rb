@@ -3,7 +3,7 @@
 require 'cyclone_lariat/messages/v1/event'
 require 'securerandom'
 
-module CycloneLariat
+module CycloneLariat # rubocop:disable Metrics/ModuleLength
   RSpec.describe Messages::V1::Event do
     let(:params) do
       {

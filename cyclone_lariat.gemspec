@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Shoryuken middleware for LunaPark based application.'
   spec.homepage      = 'https://am-team.github.io/cyclone_lariat/#/'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 3.3'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
