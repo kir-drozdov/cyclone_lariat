@@ -4,7 +4,7 @@ module CycloneLariat
   class Outbox
     module Extensions
       module ActiveRecordOutbox
-        def transaction(opts = {}, &block)
+        def transaction(**opts, &block)
           opts = opts.dup
           return super(**opts, &block) unless opts.delete(:with_outbox)
 
