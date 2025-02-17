@@ -54,9 +54,9 @@ RSpec.describe CycloneLariat::Outbox::Services::Resend do
       expect(messages_repo).to have_received(:update_error).with(message2.uuid, 'StandardError')
     end
 
-    it 'does not delete messages' do
+    it 'does not delete failed message' do
       call
-      expect(messages_repo).to have_received(:delete).with(message1.uuid)
+      expect(messages_repo).not_to have_received(:delete).with(message2.uuid)
     end
 
     context 'when on_sending_error callback present' do
